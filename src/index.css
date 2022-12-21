@@ -1,0 +1,25 @@
+table,th,td {
+  border: 2px solid ;
+  margin: 0 auto;
+  border-radius: 40px;
+  padding: 15px;
+  background-color: white;
+  height: 50px;
+
+}
+h1 {
+  color: cornflowerblue;
+  font: italic 1.2em "fira sans" ,Serif;
+  font-size: 40px;
+  text-align: center;
+}
+table{
+  background-color: coral;
+  width: 40%;
+}
+.purple {
+  background-color: palevioletred;
+}
+.blue {
+  background-color: cornflowerblue;
+}
