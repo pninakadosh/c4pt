@@ -56,11 +56,7 @@ class App extends React.Component {
     }
     checkWin = (row, col, sumOfCount) => {
         if ((sumOfCount) >= this.state.enoughToWin) {
-            alert(this.state.values[row][col] + "  winner")
-            this.setState({
-                theWinner: this.state.values[row][col]
-            })
-            alert(this.state.values[row][col] + " winnnnnner")
+            alert(this.state.values[row][col] + " winner!🏆")
             return true;
         }
         return false;
@@ -169,42 +165,30 @@ class App extends React.Component {
                     location--
                 }
                 currentValues[location][col] = this.state.player1
-                if (this.winner(location, col)) {
-                    alert(this.state.theWinner + "win")
-                } else {
-                    if (this.loseGame()) {
-                        alert("GAME-OVER")
-                    }
-                }
+               if (!this.winner(location, col)  && this.loseGame()) {
+                   alert("GAME-OVER😕")
+               }
                 this.setState({
                     player: true
                 })
-
             }
             if (this.state.player) {
                 while ((currentValues[location][col]) === this.state.player1 || (currentValues[location][col]) === this.state.player2) {
                     location--
                 }
                 currentValues[location][col] = this.state.player2
-                if (this.winner(location, col)) {
-                    alert(this.state.theWinner + "win")
-                } else {
-                    if (this.loseGame()) {
-                        alert("GAME-OVER")
-                    }
-                }
-
+                if (!this.winner(location, col) && this.loseGame() ) {
+                    alert("GAME-OVER😕")
+               }
                 this.setState({
                     player: false
                 })
-
             }
             this.setState({
                 values: currentValues
             })
         }
     }
-
     render() {
         return (
             <div className="App">
